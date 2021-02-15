@@ -1,0 +1,383 @@
+<html><head></head><body>
+<script>
+// https://www.matthewb.id.au/csv/text-list-to-javascript-array.html
+const input = ['acc +48','nop +308','acc +33','acc +48','jmp +379','acc +27','acc +23','acc +29','acc +3','jmp +326','acc -12','nop +248','nop +146','jmp +293','acc +8','acc -16','acc +18','jmp +255','jmp +390','jmp +442','acc +38','jmp +451','jmp +499','acc +41','acc +44','nop +298','acc +31','jmp +337','acc -3','acc +34','nop +266','acc -19','jmp +281','jmp +232','acc -9','acc +25','acc -8','nop +228','jmp +79','jmp +58','acc +38','nop +318','jmp +17','acc +44','jmp +298','acc -4','jmp +196','jmp +249','acc -9','acc -3','acc +17','jmp +556','jmp +1','acc -15','jmp +166','acc +23','acc +10','acc +39','jmp +475','acc +28','jmp +41','jmp +322','acc +48','acc -11','acc -13','acc +12','jmp +92','jmp +1','acc +9','jmp -26','acc +4','acc -8','nop +484','acc -14','jmp +526','acc -13','acc -2','acc -13','jmp +419','acc +22','acc -17','jmp +1','jmp +151','acc +3','acc +2','acc -13','acc -11','jmp +352','acc +24','jmp -27','nop +206','acc +22','nop +225','jmp +360','acc +48','jmp +105','jmp +80','acc -16','jmp +89','acc +0','jmp +339','acc +37','acc +41','nop +156','jmp +452','jmp +208','nop +60','jmp +155','acc -16','jmp +274','nop -77','acc -16','acc +21','jmp +508','acc -7','acc -1','jmp -83','acc -11','jmp +28','acc +3','acc +32','acc -18','jmp -89','acc +4','acc -14','acc -1','acc +33','jmp -75','nop +185','acc +8','acc +22','acc +26','jmp +164','acc -19','jmp +260','jmp +174','acc +2','acc +34','jmp -120','acc -15','acc +48','jmp +165','acc +5','nop +240','jmp -121','jmp +114','jmp -36','nop +432','jmp +1','acc -18','jmp +429','acc +44','nop +110','jmp +198','acc -18','acc +32','acc +41','jmp +102','nop +177','acc +35','acc +24','acc +46','jmp +121','acc +20','jmp +1','jmp +407','jmp +1','acc +35','acc +46','nop -18','jmp +6','jmp +422','acc -19','jmp -85','acc +33','jmp -116','nop +79','jmp +284','acc +3','acc +49','nop +317','jmp +6','acc +6','jmp +295','nop -141','acc -4','jmp -44','nop +155','acc +48','acc -17','jmp +188','acc +22','jmp +286','nop +103','acc -2','acc +45','jmp +20','acc +21','acc +37','jmp +235','jmp +42','acc -11','nop -15','acc -5','jmp +235','jmp +178','acc +12','acc -15','jmp +25','acc +9','acc +11','nop +389','acc +50','jmp +146','acc +26','jmp +144','acc -14','jmp +304','nop +254','jmp +337','jmp +17','jmp +1','acc +6','acc -4','acc +42','jmp +117','acc +25','acc +50','acc +45','jmp -112','acc +14','acc +27','jmp +347','nop +15','jmp +14','acc +29','jmp +236','jmp -71','acc -11','acc +21','nop +32','jmp -162','acc -15','jmp +322','acc -4','acc +16','jmp +1','jmp +100','jmp +1','jmp -77','acc +21','nop -199','acc +49','acc -1','jmp -231','jmp +230','acc -19','jmp +1','jmp -49','jmp -11','acc +6','jmp -110','jmp +331','acc +44','jmp +292','acc -7','acc -18','acc +50','jmp +221','acc +33','acc +7','jmp -45','jmp +342','acc -19','acc +36','acc +15','jmp -229','nop -5','jmp +57','acc +26','acc +43','nop -175','jmp +82','acc +45','jmp -161','acc -16','acc +35','acc +46','acc +43','jmp +1','nop +195','acc +39','acc +27','acc +32','jmp +227','jmp -272','nop +201','acc +6','acc +13','acc +12','jmp -177','acc -9','acc +46','nop +199','acc -1','jmp +1','jmp +3','acc +42','jmp +75','jmp +305','acc +49','acc -16','jmp -92','acc +3','nop +279','jmp +54','jmp +31','acc +50','jmp -125','acc +21','nop -178','acc +40','jmp +193','acc +39','acc -5','jmp +261','nop -3','acc -13','jmp -310','acc +6','acc -17','acc +12','acc +38','jmp +267','jmp -311','acc -2','jmp -7','nop +77','acc -2','acc +39','acc -16','jmp +10','nop +59','jmp -296','acc -4','acc +41','jmp -249','acc +43','nop +35','jmp +95','jmp +171','acc +10','nop +169','acc -17','jmp +47','acc +49','acc +38','nop +199','jmp +249','jmp -53','nop -194','acc +19','acc +18','jmp -16','acc +33','jmp +194','nop -194','acc +49','jmp +85','acc +50','nop -318','acc -7','jmp -49','acc -6','acc +48','acc -13','acc -14','jmp +67','acc +12','acc +19','acc +3','jmp -371','jmp -149','acc +49','nop -202','jmp -315','acc -6','jmp -171','acc -7','jmp +113','acc +34','acc +36','acc +17','jmp -97','acc +3','jmp -244','acc +25','acc +30','acc +25','acc -19','jmp +44','nop +84','jmp +124','nop +17','acc -11','acc -8','acc +4','jmp +193','jmp -388','acc +36','acc +17','jmp +1','acc -5','jmp +166','acc +39','acc -10','jmp -280','acc +15','jmp +1','jmp -396','jmp +113','acc +37','acc +13','jmp -35','nop +109','acc +8','acc +6','acc +19','jmp +39','jmp +1','jmp +1','acc +39','acc -14','jmp -291','acc +39','acc +31','jmp -231','acc +41','jmp -55','nop -167','jmp +105','acc -8','acc +34','jmp -114','nop +58','jmp +1','nop -270','acc +31','jmp -135','acc +8','acc +33','jmp +1','jmp -64','acc +24','acc +16','jmp +117','acc +35','acc -11','nop +44','acc +18','jmp +1','jmp +88','acc +29','nop +34','jmp +1','nop -118','jmp -404','jmp -144','acc -12','nop -372','acc -14','jmp -209','acc +12','jmp +1','acc -1','jmp +132','nop -93','jmp -130','acc +23','acc +30','acc +3','jmp -209','nop -381','acc -19','jmp +23','nop +87','jmp -277','acc +39','jmp -391','acc +14','acc +18','acc +24','nop -459','jmp -267','acc +35','nop +84','jmp -231','acc +5','acc +0','acc +45','jmp -210','jmp -211','acc +7','acc +8','nop -249','jmp -8','jmp -105','nop -455','acc -19','acc +36','jmp -368','acc +33','acc +10','acc +9','jmp -259','nop +41','acc -14','acc +2','jmp -336','acc +46','jmp -261','nop -284','acc +21','nop -154','jmp -485','jmp -505','acc +32','nop -327','acc +1','nop +43','jmp -23','acc -7','jmp -88','acc +10','jmp -440','acc +12','jmp -430','jmp +1','acc +46','nop -105','jmp -87','acc +49','acc -10','acc -6','jmp -411','jmp -268','acc +35','acc +15','jmp +45','acc -14','acc +0','jmp -234','nop -67','acc +32','acc +1','jmp -476','jmp -297','nop -274','jmp -435','acc +36','acc -2','acc +33','acc +9','jmp -26','jmp +50','acc +23','jmp -172','jmp +1','acc +34','acc +32','acc -4','jmp -312','acc -11','acc +26','jmp -150','acc +41','nop -79','acc +25','jmp -76','acc -2','acc +29','acc +12','jmp -549','nop -357','nop -438','jmp -320','acc +7','acc -6','jmp -149','nop -74','acc +7','acc +45','jmp -383','acc -8','acc +5','acc +12','jmp -463','acc -17','acc +5','jmp -34','jmp +1','acc +18','jmp -523','acc +38','acc +35','nop -222','jmp -424','nop -365','jmp -188','acc +0','acc +7','nop -167','acc +27','jmp -351','acc +26','jmp -201','nop -208','nop -466','acc +50','nop -531','jmp -273','acc +21','acc +25','nop -397','acc +29','jmp +1'];
+day8b();
+
+function day8b() {
+	let operationsOrder = [];
+	let acc = 0;
+	let swapNumber = 1;
+
+	while (!operationsOrder.includes(input.length - 1)) {
+		operationsOrder = [];
+		acc = 0;
+		let currentSwap = 0;
+		
+		for (let i = 0; i < input.length; i++) {
+			
+			if (operationsOrder.includes(i))
+				break;
+			else operationsOrder.push(i);
+		
+			let fields = input[i].split(" ");
+		
+			if (fields[0] === "nop") {
+				currentSwap++;
+				
+				if (swapNumber === currentSwap)
+					i += parseInt(fields[1]) - 1;
+				else continue;
+			}
+			else if (fields[0] === "acc")
+				acc += parseInt(fields[1]);
+			else if (fields[0] === "jmp") {
+				currentSwap++;
+				
+				if (swapNumber === currentSwap)
+					continue;
+				else i += parseInt(fields[1]) - 1;
+			}
+		}
+		swapNumber++;
+	}
+	
+	console.log(swapNumber);
+	console.log(operationsOrder);
+	console.log(acc);			
+}
+
+function day8a() {
+	let operationsOrder = [];
+	let acc = 0;
+
+	for (let i = 0; i < input.length; i++) {
+		if (operationsOrder.includes(i))
+			break;
+		else operationsOrder.push(i);
+		
+		let fields = input[i].split(" ");
+		
+		if (fields[0] === "nop")
+			continue;
+		else if (fields[0] === "acc")
+			acc += parseInt(fields[1]);
+		else if (fields[0] === "jmp")
+			i += parseInt(fields[1]) - 1;
+	}
+	
+	console.log(acc);			
+}
+
+function day7b() {
+	let bags = {};
+	
+	for (let i = 0; i < input.length; i++) {
+		let bag = RegExp("(.*) bags contain").exec(input[i])[1];
+		let content = input[i].match(RegExp("(\\d+) (\\w+ \\w+)", "g"));
+		
+		bags[bag] = {};
+		for (let c in content) {
+			let split = RegExp("(\\d+) (.+)", "g").exec(content[c]);
+			bags[bag][split[2]] = split[1];
+		}
+	}
+
+	function findBags(bag) {
+		let count = 1;
+		
+		for (let b in bags[bag])
+			count += bags[bag][b] * findBags(b);
+		
+		return count;
+	}
+	
+	console.log(findBags("shiny gold") - 1);
+}
+
+function day7a() {
+	let bags = {};
+	let validBags = new Set();
+	
+	for (let i = 0; i < input.length; i++) {
+		let bag = RegExp("(.*) bags contain").exec(input[i])[1];
+		let content = RegExp("\\d (.+)$", "g").exec(input[i]);
+		
+		if (content !== null)
+			bags[bag] = content[0];
+	}
+
+	function findBags(color) {
+		for (let b in bags) {
+			if (bags[b].includes(color)) {
+				validBags.add(b);
+				findBags(b);
+			}
+		}
+	}
+	
+	findBags("shiny gold");
+	console.log(validBags.size);
+}
+
+function day6b() {
+	let questions;
+	let sum = 0;
+	
+	for (let i = 0; i < input.length; i++) {
+		if (questions === undefined)
+			questions = new Set(input[i]);
+		else questions = new Set([...questions].filter(x => new Set(input[i]).has(x)))
+		
+		if (input[i + 1] === "" || i === input.length - 1) {
+			sum += questions.size;
+			
+			questions = undefined;
+			i++;
+		}
+	}
+
+	console.log(sum);
+}
+
+function day6a() {
+	let questions = new Set();
+	let sum = 0;
+	
+	for (let i = 0; i < input.length; i++) {
+		for (let j = 0; j < input[i].length; j++)
+			questions.add(input[i].charAt(j));
+		
+		if (input[i + 1] === "" || i === input.length - 1) {
+			sum += questions.size;
+			
+			questions.clear();
+			i++;
+		}
+	}
+
+	console.log(sum);
+}
+
+function day5b() {
+	let seats = [];
+
+	for (let i = 0; i < input.length; i++) {
+		let rowMin = 0, rowMax = 127, rows = 128;
+		let colMin = 0, colMax = 7, cols = 8;
+		
+		for (let j = 0; j < 7; j++) {
+			rows /= 2;
+			
+			if (input[i].charAt(j) === "F")
+				rowMax -= rows;
+			else rowMin += rows;
+		}
+				
+		for (let k = 7; k < 10; k++) {
+			cols /= 2;
+			
+			if (input[i].charAt(k) === "L")
+				colMax -= cols;
+			else colMin += cols;
+		}
+		
+		let seatID = rowMin * 8 + colMin;
+		
+		seats.push(seatID);
+	}
+	
+	seats.sort((a, b) => a - b);
+	
+	for (let i = 0; i < seats.length - 1; i++)
+		if (seats[i + 1] - seats[i] !== 1)
+			console.log(seats[i] + 1);
+}
+
+function day5a() {
+	let maxID = 0;
+
+	for (let i = 0; i < input.length; i++) {
+		let rowMin = 0, rowMax = 127, rows = 128;
+		let colMin = 0, colMax = 7, cols = 8;
+		
+		for (let j = 0; j < 7; j++) {
+			rows /= 2;
+			
+			if (input[i].charAt(j) === "F")
+				rowMax -= rows;
+			else rowMin += rows;
+		}
+				
+		for (let k = 7; k < 10; k++) {
+			cols /= 2;
+			
+			if (input[i].charAt(k) === "L")
+				colMax -= cols;
+			else colMin += cols;
+		}
+		
+		let seatID = rowMin * 8 + colMin;
+		
+		if (seatID > maxID)
+			maxID = seatID;
+	}
+	
+	console.log(maxID);
+}
+
+function day4b() {
+	let passport = {};
+	let valid = 0;
+	
+	for (let i = 0; i < input.length; i++) {
+		let fields = input[i].split(" ");
+		for (let i in fields) {
+			let kv = fields[i].split(":");
+
+			if (kv[0] !== "cid")
+				passport[kv[0]] = kv[1];
+		}
+		
+		if (input[i + 1] === "" || i === input.length - 1) {
+			if (Object.keys(passport).length === 7) {
+				const eyeColors = ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"];
+				
+				if ((parseInt(passport.byr) >= 1920 && parseInt(passport.byr) <= 2002) &&
+					(parseInt(passport.iyr) >= 2010 && parseInt(passport.iyr) <= 2020) &&
+					(parseInt(passport.eyr) >= 2020 && parseInt(passport.eyr) <= 2030) &&
+					new RegExp("^(59|6[0-9]|7[0-6])in$|^(1([5-8][0-9]|9[0-3]))cm$").test(passport.hgt) &&
+					new RegExp("^#[0-9a-f]{6}$").test(passport.hcl) &&
+					eyeColors.includes(passport.ecl) &&
+					new RegExp("^\\d{9}$").test(passport.pid))
+						valid++;
+			}
+			
+			passport = {};
+			i++;
+		}
+	}
+
+	console.log(valid);
+}
+
+function day4a() {
+	let passport = [];
+	let valid = 0;
+	
+	for (let i = 0; i < input.length; i++) {
+		let fields = input[i].split(" ");
+		for (let i in fields) {
+			let key = fields[i].slice(0, 3);
+			
+			if (key !== "cid")
+				passport.push(key);
+		}
+		
+		if (input[i + 1] === "" || i === input.length - 1) {
+			if (passport.length === 7)
+				valid++;
+			
+			passport = [];
+			i++;
+		}
+	}
+
+	console.log(valid);
+}
+
+function day3b() {
+	let trees = [0, 0, 0, 0, 0];
+	let totalTrees = 0;
+	const rowLength = input[0].length;
+	let x = 0, y = 0, pos = 0;
+	
+	for (let slopes = 0, x = 1, y = 1; slopes < 5; slopes++, pos = 0) {
+		for (let i = y; i < input.length; i += y) {
+			pos = pos + x > rowLength - 1 ? (pos + x) % rowLength : pos + x;
+		
+			if (input[i].charAt(pos) === "#")
+				trees[slopes]++;
+		}
+		
+		if (slopes === 3) {
+			x = 1; y = 2;
+		}
+		else x += 2;
+	}
+
+	totalTrees = trees.reduce((pv, cv) => pv * cv);
+	
+	console.log(totalTrees);
+}
+
+function day3a() {
+	let trees = 0;
+	const rowLength = input[0].length;
+	let pos = 3;
+
+	for (let i = 1; i < input.length; i++) {
+		if (input[i].charAt(pos) === "#")
+			trees++;
+			
+		pos = pos + 3 > rowLength - 1 ? (pos + 3) % rowLength : pos + 3;
+	}
+	
+	console.log(trees);
+}
+
+function day2b() {
+	let valid = 0;
+
+	for (let i = 0; i < input.length; i++) {
+		let min = parseInt(input[i].split("-")[0]), max = parseInt(input[i].split("-")[1]);
+		let letter = input[i].split(" ")[1].charAt(0);
+		let pw = input[i].split(" ")[2];
+		let count = 0;
+		
+		if (pw.charAt(min - 1) === letter)
+			count++;
+		if (pw.charAt(max - 1) === letter)
+			count++;
+			
+		if (count === 1) {
+			valid++;
+			console.log(min + " " + max + " " + letter + " " + pw);
+		}
+	}
+	
+	console.log(valid);
+}
+
+function day2a() {
+	let valid = 0;
+
+	for (let i = 0; i < input.length; i++) {
+		let min = parseInt(input[i].split("-")[0]), max = parseInt(input[i].split("-")[1]);
+		let letter = input[i].split(" ")[1].charAt(0);
+		let pw = input[i].split(" ")[2];
+		let count = (pw.match(new RegExp(letter, "g")) || []).length;
+		
+		if (count >= min && count <= max) {
+			valid++;
+			console.log(min + " " + max + " " + letter + " " + pw);
+		}
+	}
+	
+	console.log(valid);
+}
+
+function day1b() {
+	for (let i = 0; i < input.length; i++) {	
+		for (let j = i + 1; j < input.length; j++) {
+			for (let k = j + 1; k < input.length; k++) {
+				let x = parseInt(input[i]), y = parseInt(input[j]), z = parseInt(input[k]);
+			
+				if (x + y + z === 2020) {
+					console.log(x + " " + y + " " + z + " " + x * y * z);
+				}
+			}
+		}
+	}
+}
+</script></body></html>
